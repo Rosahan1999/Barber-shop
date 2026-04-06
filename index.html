@@ -3,56 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nitro Barber Shop - Allapattah, Miami</title>
+    <title>Nitro Barber Shop | Allapattah, Miami</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: white; text-align: center; margin: 0; padding: 0; }
-        header { background: #000; padding: 40px 20px; border-bottom: 3px solid #ff0000; }
-        h1 { color: #ff0000; text-transform: uppercase; letter-spacing: 2px; margin: 0; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .btn-call { display: block; background: #ff0000; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 20px 0; font-size: 1.2em; }
-        .btn-whatsapp { display: block; background: #25D366; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 20px; font-size: 1.2em; }
-        .info-card { background: #1f1f1f; padding: 20px; border-radius: 12px; text-align: left; margin-bottom: 20px; border-left: 5px solid #ff0000; }
-        .hours { font-size: 0.9em; color: #bbb; }
-        footer { padding: 20px; font-size: 0.8em; color: #666; }
+        :root {
+            --red-nitro: #ff0000;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #ffffff; 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header { 
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(10,10,10,1)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 4px solid var(--red-nitro);
+        }
+
+        h1 { 
+            font-family: 'Bebas Neue', cursive;
+            font-size: 5rem;
+            color: var(--red-nitro);
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .tagline { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; color: #ccc; }
+
+        .container { max-width: 500px; margin: -50px auto 40px; padding: 20px; position: relative; }
+
+        .btn {
+            display: block;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-ws { background-color: #25D366; color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-call { background-color: var(--red-nitro); color: white; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); }
+        .btn:active { transform: scale(0.95); }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h3 { color: var(--red-nitro); margin-top: 0; font-family: 'Bebas Neue'; font-size: 1.8rem; letter-spacing: 1px; }
+
+        .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem; color: #ddd; }
+        
+        .badge {
+            background: rgba(255, 0, 0, 0.1);
+            color: var(--red-nitro);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>NITRO BARBER SHOP</h1>
-    <p>La mejor experiencia de barbería en Miami</p>
+    <h1>NITRO</h1>
+    <div class="tagline">Barber Shop • Miami</div>
 </header>
 
 <div class="container">
-    <a href="https://wa.me/17866034312" class="btn-whatsapp">💬 AGENDAR POR WHATSAPP</a>
-    <a href="tel:7866034312" class="btn-call">📞 LLAMAR AHORA</a>
+    <a href="https://wa.me/17866034312" class="btn btn-ws">⚡ Agendar por WhatsApp</a>
+    <a href="tel:7866034312" class="btn btn-call">📞 Llamar al Local</a>
 
-    <div class="info-card">
+    <div class="card">
+        <div class="badge">ESTACIONAMIENTO DISPONIBLE</div>
         <h3>📍 Ubicación</h3>
-        <p>2148 NW 17th Ave, Miami, FL 33142<br><strong>Parking & Valet Disponible</strong></p>
+        <p>2148 NW 17th Ave, Miami, FL 33142<br>
+        <span style="color: #888; font-size: 0.9rem;">Contamos con Valet & Parking Lot</span></p>
     </div>
 
-    <div class="info-card">
-        <h3>🕒 Horarios Disponibles</h3>
-        <p class="hours">
-            Lun - Jue: 8:00 AM – 11:00 PM<br>
-            Vie - Sáb: 8:00 AM – 12:00 AM (Medianoche)<br>
-            Dom: 8:00 AM – 10:00 PM
-        </p>
+    <div class="card">
+        <h3>🕒 Horarios</h3>
+        <div class="hours-grid">
+            <div>Lun - Jue:</div><div>8 AM - 11 PM</div>
+            <div>Vie - Sáb:</div><div style="color: #25D366;">8 AM - 12 AM</div>
+            <div>Dom:</div><div>8 AM - 10 PM</div>
+        </div>
     </div>
 
-    <div class="info-card">
-        <h3>⭐ ¿Por qué elegirnos?</h3>
-        <ul>
-            <li>Instalaciones modernas (97% rating)</li>
-            <li>Especialistas en cortes y trenzas</li>
-            <li>Free Wi-Fi y ambiente de primera</li>
-        </ul>
+    <div class="card">
+        <h3>⭐ Nuestros Servicios</h3>
+        <p style="font-size: 0.9rem; color: #bbb;">Corte Premium • Barba Ritual • Trenzas • Diseños • Toalla Caliente</p>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 Nitro Barber Shop - Allapattah, Miami.
+    NITRO BARBER SHOP © 2026<br>ALLAPATTAH, MIAMI.
 </footer>
 
 </body>
